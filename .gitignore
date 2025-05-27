@@ -166,3 +166,6 @@ runs/
 *.arrow/
 cache/
 dataset_info.json
+.DS_Store
+!models/mbart50-lora/last
+!models/mbart50-lora/last/*
