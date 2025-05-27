@@ -7,7 +7,7 @@ def main():
 
     print("Przykład:", dataset[0])
 
-    out_dir = os.path.join("../data", "raw", "tatoeba-en-pl-10k")
+    out_dir = os.path.join("../data", "raw", "tatoeba-en-pl-100k")
     dataset.save_to_disk(out_dir)
     print(f"Surowe dane zapisane w: {out_dir}")
 

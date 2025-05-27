@@ -2,8 +2,8 @@ import os
 from datasets import load_from_disk, DatasetDict
 from transformers import MBart50TokenizerFast
 
-RAW_DIR = "../data/raw/tatoeba-en-pl-10k"
-PROC_DIR = "../data/processed/tatoeba-en-pl-10k"
+RAW_DIR = "../data/raw/tatoeba-en-pl-100k"
+PROC_DIR = "../data/processed/tatoeba-en-pl-100k"
 
 
 def load_raw():
@@ -12,7 +12,6 @@ def load_raw():
 
 def split_dataset(ds):
     # 1) train/val/test 80/10/10
-    # wersja „manualna”
     ds_train_val = ds.train_test_split(test_size=0.2, seed=42)
     ds_val_test = ds_train_val["test"].train_test_split(test_size=0.5, seed=42)
     return DatasetDict({
@@ -47,7 +46,6 @@ def tokenize_dataset(datasets: DatasetDict, tokenizer):
         remove_columns=datasets["train"].column_names,
         desc="Tokenizing texts",
     )
-
 
 
 def main():
