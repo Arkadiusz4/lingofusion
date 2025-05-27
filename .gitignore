@@ -159,7 +159,7 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 .idea/
 data/
-models/
+models/mbart50-lora/checkpoint-*
 logs/
 runs/
 .huggingface/
@@ -167,5 +167,6 @@ runs/
 cache/
 dataset_info.json
 .DS_Store
+
 !models/mbart50-lora/last
 !models/mbart50-lora/last/*
