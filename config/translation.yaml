@@ -1,0 +1,17 @@
+#task: translation
+
+model:
+  name_or_path: gsarti/opus-mt-tc-en-pl
+
+#training:
+#  epochs: 3
+#  batch_size: 16
+#  lr: 3e-5
+
+prefix: "translate English to Polish: "
+
+lora:
+  r: 8
+  lora_alpha: 16
+  lora_dropout: 0.1
+  target_modules: [ "q_proj", "v_proj" ]
