@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+    --bg-page: #f7f9fc;
+    --bg-card: #ffffff;
+    --bg-panel: #fafbfc;
+    --border: #e1e4e8;
+    --accent: #1a73e8;
+    --accent-light: #e8f0fe;
+    --text-primary: #24292e;
+    --text-secondary: #57606a;
+    --radius: 6px;
+    --spacing: 1rem;
+    --transition: 0.2s ease-in-out;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Cały ekran, light mode */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-page);
+    color: var(--text-primary);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Kontener rozciągnięty */
+.app-container {
+    width: 90vw;
+    height: 85vh;
+    max-width: 1200px;
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Nagłówek */
+header {
+    padding: var(--spacing);
+    border-bottom: 1px solid var(--border);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+/* Panele w dwóch kolumnach, wypełniają wysokość */
+.panels {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+}
+
+/* Panel */
+.panel {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing);
+    background: var(--bg-panel);
+}
+
+.panel:first-child {
+    border-right: 1px solid var(--border);
+}
+
+.panel label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+footer {
+  padding: var(--spacing);
+  border-top: 1px solid var(--border);
+  text-align: right;
+}
