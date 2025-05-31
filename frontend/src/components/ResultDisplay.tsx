@@ -1,5 +1,4 @@
-import React from 'react';
-import '../styles/ResultDisplay.css';
+import React from "react";
 
 interface Highlight {
     start: number;
@@ -10,15 +9,25 @@ interface Highlight {
 interface Props {
     output: string;
     highlights?: Highlight[];
+    dataPlaceholder?: string;
 }
 
-export default function ResultDisplay({output, highlights, dataPlaceholder}: Props & { dataPlaceholder?: string }) {
-    if (!highlights?.length && !output) {
-        return <pre className="result" data-placeholder={dataPlaceholder || ''}/>;
+export default function ResultDisplay({
+                                          output,
+                                          highlights = [],
+                                          dataPlaceholder = "",
+                                      }: Props) {
+
+    if (highlights.length === 0 && output === "") {
+        return <pre className="result" data-placeholder={dataPlaceholder}/>;
+    }
+
+    if (highlights.length === 0) {
+        return <pre className="result">{output}</pre>;
     }
 
     let last = 0;
-    const parts = highlights.map((h, i) => {
+    const parts: React.ReactNode[] = highlights.map((h, i) => {
         const before = output.slice(last, h.start);
         const wrong = output.slice(h.start, h.end);
         last = h.end;
@@ -31,6 +40,12 @@ export default function ResultDisplay({output, highlights, dataPlaceholder}: Pro
             </React.Fragment>
         );
     });
-    parts.push(output.slice(last));
+
+    parts.push(
+        <React.Fragment key="last">
+            {output.slice(last)}
+        </React.Fragment>
+    );
+
     return <pre className="result">{parts}</pre>;
 }
