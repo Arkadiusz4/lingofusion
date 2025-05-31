@@ -1,16 +1,25 @@
-import NavTabs from "./NavTabs";
 import "./Header.css";
+import NavTabs from "./NavTabs";
 
-interface Props {
+export default function Header({
+                                   currentPage,
+                                   onTabChange,
+                               }: {
     currentPage: "translate" | "correct";
     onTabChange: (page: "translate" | "correct") => void;
-}
-
-export default function Header({currentPage, onTabChange}: Props) {
+}) {
     return (
-        <header className="header">
+        <div className="header">
+            <div className="header-logo">
+                <img
+                    src="/logo-bg.png"
+                    alt="LingoFusion Logo"
+                    width={50}
+                    height={50}
+                />
+            </div>
             <div className="header-title">LingoFusion</div>
             <NavTabs currentTab={currentPage} onTabChange={onTabChange}/>
-        </header>
+        </div>
     );
 }
