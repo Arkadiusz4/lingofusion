@@ -1,4 +1,6 @@
+// src/components/ResultDisplay.tsx
 import React from "react";
+import "./ResultDisplay.css";
 
 interface Highlight {
     start: number;
@@ -17,15 +19,25 @@ export default function ResultDisplay({
                                           highlights = [],
                                           dataPlaceholder = "",
                                       }: Props) {
-
+    // Jeżeli zupełnie brak tekstu i brak highlightów – pokazujemy placeholder
     if (highlights.length === 0 && output === "") {
-        return <pre className="result" data-placeholder={dataPlaceholder}/>;
+        return (
+            <div className="result-card">
+                <pre className="result result-placeholder">{dataPlaceholder}</pre>
+            </div>
+        );
     }
 
+    // Gdy tylko tekst bez highlightów
     if (highlights.length === 0) {
-        return <pre className="result">{output}</pre>;
+        return (
+            <div className="result-card">
+                <pre className="result">{output}</pre>
+            </div>
+        );
     }
 
+    // Gdy mamy highlighty do pokolorowania
     let last = 0;
     const parts: React.ReactNode[] = highlights.map((h, i) => {
         const before = output.slice(last, h.start);
@@ -40,12 +52,11 @@ export default function ResultDisplay({
             </React.Fragment>
         );
     });
+    parts.push(<React.Fragment key="last">{output.slice(last)}</React.Fragment>);
 
-    parts.push(
-        <React.Fragment key="last">
-            {output.slice(last)}
-        </React.Fragment>
+    return (
+        <div className="result-card">
+            <pre className="result">{parts}</pre>
+        </div>
     );
-
-    return <pre className="result">{parts}</pre>;
 }

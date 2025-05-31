@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 export interface PredictRequest {
-  text: string;
-  mode: 'translate-pl-en' | 'gec-en';
+    text: string;
+    mode: "translate-pl-en" | "translate-en-pl" | "gec-en";
 }
 
 export interface PredictResponse {

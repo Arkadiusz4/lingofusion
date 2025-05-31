@@ -1,0 +1,32 @@
+/* src/components/TextInput.css */
+
+.text-input {
+    width: 100%;
+    flex: 1;
+    min-height: 200px;
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-family: var(--font-main);
+    font-size: 1rem;
+    color: var(--text-primary);
+    background: #1e1e28;
+    resize: vertical;
+    transition: border var(--transition), box-shadow var(--transition), background var(--transition);
+}
+
+.text-input:hover {
+    background: #272733;
+}
+
+.text-input:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: #2c2c3e;
+    box-shadow: 0 0 0 3px var(--accent-light);
+}
+
+.text-input::placeholder {
+    color: var(--text-secondary);
+    font-style: italic;
+}

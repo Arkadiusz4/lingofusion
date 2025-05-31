@@ -1,61 +1,54 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+/* src/App.css */
 
-:root {
-    --bg-page: #f7f9fc;
-    --bg-card: #ffffff;
-    --bg-panel: #fafbfc;
-    --border: #e1e4e8;
-    --accent: #1a73e8;
-    --accent-light: #e8f0fe;
-    --text-primary: #24292e;
-    --text-secondary: #57606a;
-    --radius: 6px;
-    --spacing: 1rem;
-    --transition: 0.2s ease-in-out;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-/* Cały ekran, light mode */
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: var(--bg-page);
-    color: var(--text-primary);
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Kontener rozciągnięty */
+/* -------------------------------------- */
+/* 1. Karta aplikacji (z gradientem)      */
+/* -------------------------------------- */
 .app-container {
-    width: 90vw;
-    height: 85vh;
+    margin: 3rem auto auto;
+    width: 160vw;
     max-width: 1200px;
-    background: var(--bg-card);
+    height: 90vh;
+    max-height: 900px;
+    background: linear-gradient(
+            135deg,
+            var(--card-gradient-start),
+            var(--card-gradient-end)
+    );
     border-radius: var(--radius);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-card);
     display: flex;
     flex-direction: column;
     overflow: hidden;
 }
 
-/* Nagłówek */
-header {
-    padding: var(--spacing);
-    border-bottom: 1px solid var(--border);
+/* -------------------------------------- */
+/* 2. Pasek nad panelami (dropdown, btn)  */
+/* -------------------------------------- */
+.page-header {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding: 0 var(--spacing) 2rem;
+    background: var(--bg-card);
+    flex-shrink: 0;
+    position: relative; /* Dodano dla pseudo-elementu */
 }
 
-header h1 {
-    margin: 0;
-    font-size: 1.75rem;
-    font-weight: 700;
+.page-header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--border); /* Kolor linii */
 }
 
-/* Panele w dwóch kolumnach, wypełniają wysokość */
+/* -------------------------------------- */
+/* 3. Panele (wejście / wyjście)          */
+/* -------------------------------------- */
 .panels {
     flex: 1;
     display: grid;
@@ -63,16 +56,36 @@ header h1 {
     overflow: hidden;
 }
 
-/* Panel */
+@media (max-width: 768px) {
+    .panels {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
 .panel {
     display: flex;
     flex-direction: column;
     padding: var(--spacing);
     background: var(--bg-panel);
+    transition: background var(--transition), box-shadow var(--transition);
 }
 
-.panel:first-child {
-    border-right: 1px solid var(--border);
+.panel + .panel {
+    border-left: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+    .panel + .panel {
+        border-left: none;
+        border-top: 1px solid var(--border);
+    }
+}
+
+/* Neonowy hover */
+.panel:hover {
+    background: #2f2f3f; /* Nieco jaśniejszy granat */
+    box-shadow: 0 0 12px var(--accent);
 }
 
 .panel label {
@@ -81,8 +94,12 @@ header h1 {
     color: var(--text-secondary);
 }
 
-footer {
-  padding: var(--spacing);
-  border-top: 1px solid var(--border);
-  text-align: right;
+/* -------------------------------------- */
+/* 4. Wyrównanie spinnera w środku panelu */
+/* -------------------------------------- */
+.spinner-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
 }

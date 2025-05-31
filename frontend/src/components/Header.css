@@ -1,0 +1,37 @@
+/* src/components/Header.css */
+
+/* Nagłówek z animowanym gradientem */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing);
+    background: linear-gradient(
+            90deg,
+            var(--header-gradient-1) 0%,
+            var(--header-gradient-2) 50%,
+            var(--header-gradient-1) 100%
+    );
+    background-size: 300% 300%;
+    animation: slidebg 8s ease infinite;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+}
+
+.header-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+@keyframes slidebg {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
