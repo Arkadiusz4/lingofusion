@@ -1,10 +1,9 @@
-// src/pages/CorrectPage.tsx
 import {useState} from "react";
-import {predict} from "../api";
-import TextInput from "../components/TextInput";
-import ResultDisplay from "../components/ResultDisplay";
-import Button from "../components/Button";
-import Spinner from "../components/Spinner";
+import {predict} from "../../api";
+import TextInput from "../../components/TextInput/TextInput";
+import ResultDisplay from "../../components/ResultDisplay/ResultDisplay";
+import Button from "../../components/Button/Button.tsx";
+import Spinner from "../../components/Spinner/Spinner";
 import "./CorrectPage.css";
 
 export default function CorrectPage() {
@@ -39,7 +38,6 @@ export default function CorrectPage() {
             </div>
 
             <div className="panels">
-                {/* Lewa kolumna: wejście */}
                 <div className="panel panel-input">
                     <label htmlFor="correct-input">Wejście (EN)</label>
                     <TextInput
@@ -50,7 +48,6 @@ export default function CorrectPage() {
                     />
                 </div>
 
-                {/* Prawa kolumna: wynik */}
                 <div className="panel panel-output">
                     <label>Poprawka</label>
                     {loading ? (

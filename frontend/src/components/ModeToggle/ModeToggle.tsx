@@ -5,7 +5,6 @@ interface Props {
     onChange: (m: 'translate' | 'gec') => void;
 }
 
-// Drobne ulepszenie: zachowujemy klasę z zewnątrz, jeśli trzeba dać margin
 export default function ModeToggle({mode, onChange}: Props) {
     return (
         <div className="mode-toggle">

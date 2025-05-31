@@ -1,4 +1,3 @@
-// src/components/ResultDisplay.tsx
 import React from "react";
 import "./ResultDisplay.css";
 
@@ -19,7 +18,6 @@ export default function ResultDisplay({
                                           highlights = [],
                                           dataPlaceholder = "",
                                       }: Props) {
-    // Jeżeli zupełnie brak tekstu i brak highlightów – pokazujemy placeholder
     if (highlights.length === 0 && output === "") {
         return (
             <div className="result-card">
@@ -28,7 +26,6 @@ export default function ResultDisplay({
         );
     }
 
-    // Gdy tylko tekst bez highlightów
     if (highlights.length === 0) {
         return (
             <div className="result-card">
@@ -37,7 +34,6 @@ export default function ResultDisplay({
         );
     }
 
-    // Gdy mamy highlighty do pokolorowania
     let last = 0;
     const parts: React.ReactNode[] = highlights.map((h, i) => {
         const before = output.slice(last, h.start);

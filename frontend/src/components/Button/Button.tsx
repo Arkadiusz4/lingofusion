@@ -1,10 +1,9 @@
-// src/components/Button.tsx
 import React from "react";
 import "./Button.css";
 
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children: React.ReactNode;
-    className?: string; // pozwala na dodanie dodatkowych klas
+    className?: string;
 }
 
 export default function Button({children, className = "", ...props}: Props) {

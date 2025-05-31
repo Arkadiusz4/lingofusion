@@ -1,6 +1,3 @@
-/* src/pages/TranslatePage.css */
-
-/* Nagłówek strony (dropdown + przyciski + swap) */
 .page-header {
     display: flex;
     align-items: center;
@@ -12,7 +9,6 @@
     border-bottom: 1px solid var(--border);
 }
 
-/* Styl przycisku „swap” (podwójna strzałka) */
 .swap-button {
     display: inline-flex;
     align-items: center;
@@ -35,7 +31,6 @@
     box-shadow: 0 0 0 3px var(--accent-light);
 }
 
-/* Dla ikonki wewnątrz przycisku swap */
 .swap-button .swap-icon {
     width: 1.2em;
     height: 1.2em;
@@ -47,7 +42,6 @@
     color: var(--accent);
 }
 
-/* Etykiety paneli */
 .panel-input label,
 .panel-output label {
     font-weight: 600;

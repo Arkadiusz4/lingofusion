@@ -1,13 +1,11 @@
-// src/pages/TranslatePage.tsx
-
 import {useState} from "react";
-import {predict} from "../api";
-import TextInput from "../components/TextInput";
-import ResultDisplay from "../components/ResultDisplay";
-import ModeSelect from "../components/ModeSelect";
-import Button from "../components/Button";
-import Spinner from "../components/Spinner";
-import {AiOutlineSwap} from "react-icons/ai"; // import ikony „swap”
+import {predict} from "../../api";
+import TextInput from "../../components/TextInput/TextInput";
+import ResultDisplay from "../../components/ResultDisplay/ResultDisplay";
+import ModeSelect from "../../components/ModeSelect/ModeSelect";
+import Button from "../../components/Button/Button.tsx";
+import Spinner from "../../components/Spinner/Spinner";
+import {AiOutlineSwap} from "react-icons/ai";
 import "./TranslatePage.css";
 
 export default function TranslatePage() {
@@ -18,7 +16,6 @@ export default function TranslatePage() {
     const [loading, setLoading] = useState(false);
     const [result, setResult] = useState<{ output: string; highlights?: any[] } | null>(null);
 
-    // Funkcja do zamiany kierunku tłumaczenia
     const swapDirection = () => {
         setDirection((prev) =>
             prev === "translate-pl-en" ? "translate-en-pl" : "translate-pl-en"
@@ -45,12 +42,9 @@ export default function TranslatePage() {
 
     return (
         <>
-            {/* ---------- Nagłówek strony: dropdown + swap + przycisk ---------- */}
             <div className="page-header">
-                {/* 1) Dropdown kierunku tłumaczenia */}
                 <ModeSelect value={direction} onChange={setDirection}/>
 
-                {/* 2) Przycisk swap (podwójna strzałka) */}
                 <button
                     type="button"
                     className="swap-button"
@@ -60,15 +54,12 @@ export default function TranslatePage() {
                     <AiOutlineSwap className="swap-icon"/>
                 </button>
 
-                {/* 3) Przycisk „Przetłumacz” */}
                 <Button onClick={handleRun} disabled={loading || !text.trim()}>
                     {loading ? <Spinner/> : "Przetłumacz"}
                 </Button>
             </div>
 
-            {/* ---------- Panele wejścia / wyjścia ---------- */}
             <div className="panels">
-                {/* Lewa kolumna: pole wejściowe */}
                 <div className="panel panel-input">
                     <label htmlFor="translate-input">
                         {direction === "translate-pl-en" ? "Wejście (PL)" : "Wejście (EN)"}
@@ -81,7 +72,6 @@ export default function TranslatePage() {
                     />
                 </div>
 
-                {/* Prawa kolumna: rezultat */}
                 <div className="panel panel-output">
                     <label>Wyjście</label>
                     {loading ? (

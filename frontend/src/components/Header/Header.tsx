@@ -1,5 +1,5 @@
 import "./Header.css";
-import NavTabs from "./NavTabs";
+import NavTabs from "../NavTabs/NavTabs.tsx";
 
 export default function Header({
                                    currentPage,
