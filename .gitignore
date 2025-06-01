@@ -168,3 +168,5 @@ dataset_info.json
 .DS_Store
 
 notebooks/mt-pl-en-lora/checkpoint-*
+results/helsinki_train20k_ep3_r8_len128/checkpoint-*
+
