@@ -168,5 +168,5 @@ dataset_info.json
 .DS_Store
 
 notebooks/mt-pl-en-lora/checkpoint-*
-notebooks/results/helsinki_*/checkpoint-*
+notebooks/results_pl_en/helsinki_*/checkpoint-*
 
