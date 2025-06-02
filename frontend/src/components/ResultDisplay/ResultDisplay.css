@@ -22,7 +22,14 @@
 }
 
 .highlight {
-    background: #fffae6;
-    border-bottom: 1px dashed #ffb86c;
+    background-color: rgba(255, 121, 121, 0.3);
+    border-bottom: 2px dashed #ff79c6;
+    color: #ff79c6;
+    padding: 0 2px;
+    border-radius: 2px;
     cursor: help;
+}
+
+.highlight:hover {
+    background-color: rgba(255, 121, 121, 0.5);
 }
