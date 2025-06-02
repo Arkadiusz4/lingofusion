@@ -18,7 +18,7 @@ export default function CorrectPage() {
         try {
             const payload = {
                 text,
-                mode: "gec-en" as const,
+                mode: "correct" as const,
             };
             const res = await predict(payload);
             setResult(res);

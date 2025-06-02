@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export interface PredictRequest {
     text: string;
-    mode: "translate-pl-en" | "translate-en-pl" | "gec-en";
+    mode: "translate-pl-en" | "translate-en-pl" | "correct";
 }
 
 export interface PredictResponse {
