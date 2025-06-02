@@ -4,6 +4,12 @@ from .routes import router
 
 app = FastAPI(title="MT+LoRA API")
 
+
+@app.on_event("startup")
+async def load_all_models():
+    import app.models
+
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],

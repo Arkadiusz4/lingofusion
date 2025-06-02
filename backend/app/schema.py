@@ -4,7 +4,7 @@ from typing import List, Optional
 
 class PredictRequest(BaseModel):
     text: str
-    mode: str  # "translate-pl-en" lub "gec-en" (jeśli dodasz korektor)
+    mode: str
 
 
 class Highlight(BaseModel):

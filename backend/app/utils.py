@@ -1,4 +1,9 @@
-# jeśli masz chcesz generować highlighty błędów, np. porównując źródło z outputem
 def simple_highlight(src: str, out: str):
-    # tu prosta logika porównania, zwraca listę dictów {start,end,suggestion}
+    """
+    Zwraca listę słowników w formacie:
+        [{"start": int, "end": int, "suggestion": str}, …]
+
+    Wersja podstawowa (na razie pusta).
+    Później można porównać src vs out, znaleźć różnice tx.
+    """
     return []
