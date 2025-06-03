@@ -1,0 +1,15 @@
+.correct-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: var(--spacing);
+    margin: var(--spacing) 0;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+}
+
+.panel-input label,
+.panel-output label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}

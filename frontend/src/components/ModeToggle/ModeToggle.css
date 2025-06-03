@@ -1,0 +1,27 @@
+.mode-toggle {
+    display: inline-flex;
+    background: var(--border);
+    border-radius: var(--radius);
+    padding: 4px;
+}
+
+.mode-toggle button {
+    border: none;
+    background: transparent;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-radius: var(--radius);
+    transition: background var(--transition), color var(--transition);
+}
+
+.mode-toggle button:hover {
+    background: var(--accent-light);
+}
+
+.mode-toggle button.active {
+    background: var(--accent);
+    color: #fff;
+}

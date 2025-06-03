@@ -1,0 +1,50 @@
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding: 0 var(--spacing);
+    margin-bottom: var(--spacing);
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+}
+
+.swap-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background var(--transition), box-shadow var(--transition);
+}
+
+.swap-button:hover {
+    background: var(--accent-light);
+    box-shadow: 0 0 6px var(--accent);
+}
+
+.swap-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--accent-light);
+}
+
+.swap-button .swap-icon {
+    width: 1.2em;
+    height: 1.2em;
+    color: var(--text-secondary);
+    transition: color var(--transition);
+}
+
+.swap-button:hover .swap-icon {
+    color: var(--accent);
+}
+
+.panel-input label,
+.panel-output label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}

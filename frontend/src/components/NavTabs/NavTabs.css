@@ -1,0 +1,44 @@
+.nav-tabs {
+    display: inline-flex;
+    background: var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.tab-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: background var(--transition), color var(--transition);
+}
+
+.tab-button .tab-icon {
+    width: 1.2em;
+    height: 1.2em;
+    color: var(--text-secondary);
+    transition: color var(--transition);
+}
+
+.tab-button:hover .tab-icon {
+    color: var(--accent);
+}
+
+.tab-button:hover {
+    background: var(--accent-light);
+}
+
+.tab-button.active {
+    background: var(--accent);
+    color: #0f1015;
+}
+
+.tab-button.active .tab-icon {
+    color: #0f1015;
+}
