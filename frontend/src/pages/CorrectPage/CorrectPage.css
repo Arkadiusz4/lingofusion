@@ -1,10 +1,8 @@
-.page-header {
+.correct-header {
     display: flex;
-    align-items: center;
     justify-content: flex-end;
-    gap: 1rem;
-    padding: 0 var(--spacing);
-    margin-bottom: var(--spacing);
+    padding: var(--spacing);
+    margin: var(--spacing) 0;
     background: var(--bg-card);
     border-bottom: 1px solid var(--border);
 }
