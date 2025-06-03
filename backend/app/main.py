@@ -1,13 +1,13 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from .routes import router
+from .routes.predict import router as predict_router
 
 app = FastAPI(title="MT+LoRA API")
 
 
 @app.on_event("startup")
 async def load_all_models():
-    import app.models
+    import app.models.translator
 
 
 app.add_middleware(
@@ -17,4 +17,4 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(router, prefix="/api")
+app.include_router(predict_router, prefix="/api")
