@@ -1,4 +1,4 @@
-# Lingofusion Backend
+# LingoFusion Backend
 
 ## Spis treści
 
