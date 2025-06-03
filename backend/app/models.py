@@ -15,7 +15,7 @@ print("[models.py] Rozpoczynam ładowanie modeli…")
 
 BASE_DIR = os.path.dirname(__file__)
 LORA_PLEN = os.path.abspath(os.path.join(BASE_DIR, "..", "helsinki_train20k_ep3_r8_len128", "lora_adapter"))
-LORA_ENPL = os.path.abspath(os.path.join(BASE_DIR, "..", "gsarti_enpl_train20k_ep3_r8_len128", "lora_adapter"))
+LORA_ENPL = os.path.abspath(os.path.join(BASE_DIR, "..", "gsarti_enpl_train100k_ep7_r8_len128", "lora_adapter"))
 LORA_GEC = os.path.abspath(os.path.join(BASE_DIR, "..", "t5-large_jfleg+nucle+bea_ep7_r8", "lora_adapter"))
 
 # ------------------ PL → EN ------------------

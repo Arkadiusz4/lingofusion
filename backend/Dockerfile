@@ -12,7 +12,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY backend/app ./app
 COPY notebooks/results_pl_en/helsinki_train20k_ep3_r8_len128/lora_adapter ./helsinki_train20k_ep3_r8_len128/lora_adapter
-COPY notebooks/results_en_pl/gsarti_enpl_train20k_ep3_r8_len128/lora_adapter ./gsarti_enpl_train20k_ep3_r8_len128/lora_adapter
+COPY notebooks/results_en_pl/gsarti_enpl_train100k_ep7_r8_len128/lora_adapter ./gsarti_enpl_train100k_ep7_r8_len128/lora_adapter
 COPY notebooks/results_gec/t5-large_jfleg+nucle+bea_ep7_r8/lora_adapter ./t5-large_jfleg+nucle+bea_ep7_r8/lora_adapter
 
 EXPOSE 8000
