@@ -82,38 +82,16 @@ Tworzy dwa kontenery:
 - Backend (FastAPI) gotowy do przyjmowania requestów:
 
 ```less
-[translator.py
-
-]
-✔ PL→EN gotowe.
-[translator.py
-
-]
-✔ EN→PL gotowe.
-INFO: Uvicorn running on http:
-
-//0.0.0.0:8000 (Press CTRL+C to quit)
+[translator.py] ✔ PL→EN gotowe.
+[translator.py] ✔ EN→PL gotowe.
+INFO: Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
 ```
 
 - Frontend (Nginx) gotowy:
 
 ```less
-2025
-/
-06
-/
-XX XX:XX:XX [notice] nginx
-
-/
-1.23
-.4
-2025
-/
-06
-/
-XX XX:XX:XX [notice] start worker process
-
-1
+2025/06/XX XX:XX:XX [notice] nginx/1.23.4/2025/06/
+XX XX:XX:XX [notice] start worker process 1
 ```
 
 5. Otwórz przeglądarkę:
@@ -146,44 +124,12 @@ uvicorn main:app --host 0.0.0.0 --port 8000 --workers 1
 Przy starcie zobaczysz w logach:
 
 ```less
-[translator.py
-
-]
-Ładuję PL→EN tokenizer i bazowy model…
-[translator.py
-
-]
-Ładuję PL→EN adapter LoRA z: /ścieżka/ do
-
-/
-helsinki_train
-
-...
-/
-lora_adapter
-[translator.py
-
-]
-Scalanie PL→EN… ✔
-[translator.py
-
-]
-Ładuję EN→PL tokenizer i bazowy model…
-[translator.py
-
-]
-Ładuję EN→PL adapter LoRA… ✔
-INFO:
-
-127.0
-.0
-.1
-:XXXX -
-
-"GET /docs HTTP/1.1"
-200
-OK
-
+[translator.py] Ładuję PL→EN tokenizer i bazowy model…
+[translator.py] Ładuję PL→EN adapter LoRA z: /ścieżka/do/helsinki_train.../lora_adapter
+[translator.py] Scalanie PL→EN… ✔
+[translator.py] Ładuję EN→PL tokenizer i bazowy model…
+[translator.py] Ładuję EN→PL adapter LoRA… ✔
+INFO: 127.0.0.1:XXXX - "GET /docs HTTP/1.1" 200 OK
 ...
 ```
 
