@@ -21,7 +21,6 @@ danych.
 5. [Szybki start – frontend](#szybki-start--frontend)
 6. [Opis notebooków](#opis-notebooków)
 7. [Zestaw danych](#zestaw-danych)
-8. [Dalsze kroki](#dalsze-kroki)
 
 ---
 
